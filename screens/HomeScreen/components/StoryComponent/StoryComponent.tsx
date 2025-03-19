@@ -1,28 +1,40 @@
-import React, { useState } from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
-import styles from './StoryComponent.styles';
+import { StyleSheet } from 'react-native';
+import colors from '../../../constants/colors';
+import sizes from '../../../constants/sizes';
 
-const StoryComponent = ({ story }) => {
-  const [seen, setSeen] = useState(false); // Estado inicial de las historias como no vistas
+const styles = StyleSheet.create({
+  story: {
+    alignItems: 'center',
+    marginHorizontal: sizes.padding / 2,
+  },
+  story_unseen: {
+    width: sizes.storySize,
+    height: sizes.storySize,
+    borderRadius: sizes.storySize / 2,
+    borderWidth: 2,
+    borderColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  story_seen: {
+    width: sizes.storySize,
+    height: sizes.storySize,
+    borderRadius: sizes.storySize / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  story_image: {
+    width: sizes.storyImageSize,
+    height: sizes.storyImageSize,
+    borderRadius: sizes.storyImageSize / 2,
+    borderWidth: 0.5,
+    borderColor: colors.white,
+  },
+  story_username: {
+    marginTop: sizes.padding / 2,
+    fontSize: 12,
+    color: colors.black,
+  },
+});
 
-  const handlePress = () => {
-    setSeen(true);
-  };
-
-  return (
-    <TouchableOpacity style={styles.story} onPress={handlePress}>
-      {seen ? (
-        <View style={styles.story_seen}>
-          <Image source={story.img_src} style={styles.story_image} />
-        </View>
-      ) : (
-        <View style={styles.story_unseen}>
-          <Image source={story.img_src} style={styles.story_image} />
-        </View>
-      )}
-      <Text style={styles.story_username}>{story.username}</Text>
-    </TouchableOpacity>
-  );
-};
-
-export default StoryComponent;
+export default styles;

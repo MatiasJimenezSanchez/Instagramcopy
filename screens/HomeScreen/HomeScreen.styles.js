@@ -1,23 +1,25 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../constants/colors';
+import sizes from '../../constants/sizes';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.lightBackground,
   },
   top_bar: {
-    marginTop: 30,
+    marginTop: sizes.padding * 3,
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    paddingHorizontal: 10,
+    paddingHorizontal: sizes.padding,
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    height: 50,
+    borderBottomColor: colors.borderColor,
+    height: sizes.padding * 5,
   },
   logo: {
-    width: 100,
-    height: 30,
+    width: sizes.logoWidth,
+    height: sizes.logoHeight,
     resizeMode: 'contain',
   },
   icon_group: {
@@ -25,82 +27,45 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    marginLeft: 10,
+    marginLeft: sizes.padding,
   },
   stories_container: {
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    flex: 1, 
+    paddingHorizontal: sizes.padding,
+    paddingVertical: sizes.padding,
+    flex: 1,
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    borderBottomColor: colors.borderColor,
   },
   posts_container: {
-    paddingHorizontal: 10,
+    paddingHorizontal: sizes.padding,
     flex: 8,
-    paddingHorizontal: 10,
-    marginTop: 0, 
+    marginTop: 0,
   },
   tab_container: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     borderTopWidth: 1,
-    borderTopColor: '#ddd',
-    height: 50,
-  },
-  story: {
-    alignItems: 'center',
-    marginHorizontal: 5,
-  },
-  story_border: {
-    width: 65,
-    height: 65,
-    borderRadius: 40,
-    borderWidth: 2,
-    borderColor: '#ff1493',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  story_image: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    borderWidth: 0.5,
-    borderColor: 'white',
-  },
-  story_username: {
-    marginTop: 5,
-    fontSize: 12,
-  },
-  post: {
-    width: '100%',
-    marginBottom: 20,
-  },
-  post_image: {
-    width: '100%',
-    height: 400,
-  },
-  post_caption: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+    borderTopColor: colors.borderColor,
+    height: sizes.padding * 5,
   },
   lightContainer: {
-    backgroundColor: 'white',
+    backgroundColor: colors.lightBackground,
   },
   darkContainer: {
-    backgroundColor: '#242c40',
+    backgroundColor: colors.darkBackground,
   },
   lightThemeText: {
-    color: '#242c40',
+    color: colors.lightText,
   },
   darkThemeText: {
-    color: 'white',
+    color: colors.darkText,
   },
   profile_icon: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    width: sizes.profileIconSize,
+    height: sizes.profileIconSize,
+    borderRadius: sizes.borderRadius,
     borderWidth: 0,
   },
 });
